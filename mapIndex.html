@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- Link to CSS-->
+<link rel="stylesheet" href="style.css">
+
+<title>Gold Pages</title>
+
+  <title>My Google Map</title>
+  <style>
+    #map {
+      height: 600px;
+      width: 60%;
+    }
+  </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-light mt-4">
+        <a class="navbar-brand mx-auto" href="newindex.html">
+            <img src="goldpages-sansserif.png" width="250" height="200" class="logo d-inline-block" alt="">
+        </a>
+    </nav>
+<br>
+  
+  <div id="map"></div>
+  <script>
+    function initMap() {
+      // Map options
+      var options = {
+        zoom: 8,
+        center: { lat: 32.77815, lng: -96.7954 } //for now set to dallas
+      }
+
+      // New map
+      var map = new google.maps.Map(document.getElementById('map'), options);
+
+    
+      // Example Array of markers==problem: search markers?
+      var markers = [
+        {
+          coords: { lat: 33.15059, lng: -96.83354 },
+          iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content: '<h1>Frisco</h1>'
+        },
+        {
+          coords: { lat: 42.8584, lng: -70.9300 },
+          iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content: '<h1>The colony</h1>'
+        },
+        {
+          coords: { lat: 32.7477, lng: -97.0072 },
+          iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content: '<h1>Grand Prairie</h1>'
+        }
+      ];
+
+      // Loop through markers
+      for (var i = 0; i < markers.length; i++) {
+        // Add marker
+        addMarker(markers[i]);
+      }
+
+      // Add Marker Function
+      function addMarker(props) {
+        var marker = new google.maps.Marker({
+          position: props.coords,
+          map: map,
+          //icon:props.iconImage
+        });
+
+        // Check for customicon
+        if (props.iconImage) {
+          // Set icon image
+          marker.setIcon(props.iconImage);
+        }
+
+        // Check content
+        if (props.content) {
+          var infoWindow = new google.maps.InfoWindow({
+            content: props.content
+          });
+
+          marker.addListener('click', function () {
+            infoWindow.open(map, marker);
+          });
+        }
+      }
+    }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA372PcuJQKYrKADjhHTLLDVcfsoCzF-4M&callback=initMap">
+    </script>
+</body>
+
+</html>
