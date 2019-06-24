@@ -25,5 +25,9 @@ var allClicked = $(document).on("click", ".all", function () {
     $(".md-form").show();
 });
 
+// When zip code is submitted and submit button is clicked.
+$(document).on("click", ".btn", function () {
+    console.log("submit button clicked")
 
+});
 
