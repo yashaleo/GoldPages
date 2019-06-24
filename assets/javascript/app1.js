@@ -37,6 +37,8 @@ $(document).on("click", ".btn", function () {
       x.innerHTML = 'Geolocation is not supported by this browser.';
     }
   }
+
+  var googleURL = 'https://maps.googleapis.com/maps/api/js?key=KEY GOES HERE!';
   
   function showPosition(position) {
     var lat = position.coords.latitude;
@@ -70,7 +72,7 @@ $(document).on("click", ".btn", function () {
   
   getLocation();
   
-  var googleURL = 'https://maps.googleapis.com/maps/api/js?key=YOURKEYGOESHERE';
+
   
 
 
