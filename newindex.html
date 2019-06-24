@@ -12,19 +12,30 @@
     <!-- Link to CSS-->
     <link rel="stylesheet" href="style.css">
 
+
     <title>Gold Pages</title>
 </head>
 
 <body>
-    <div class="container">
 
-        <div class="form-container rounded">
-            <button type="button" class="btn btn-primary">Restaurants</button>
-            <button type="button" class="btn btn-primary">Hotels</button>
-            <button type="button" class="btn btn-primary">Attractions</button>
-            <button type="button" class="btn btn-primary">All</button>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-light mt-4">
+        <a class="navbar-brand mx-auto" href="newindex.html">
+            <img src="goldpages-sansserif.png" width="250" height="200" class="logo d-inline-block" alt="">
+        </a>
+    </nav>
+    <!-- Container -->
+    <div class="container mt-5">
+        <div class="form-container rounded pt-1 pt-2">
+            <p class="h3">What are you looking for?:</p>
+            <input type="image" id="restaurant" class="restaurant icons rounded" src="restaurant.png" width="100"
+                height="125">
+            <input type="image" id="hotel" class="hotel icons rounded" src="hotel.png" width="100" height="125">
+            <input type="image" id="attractions" class="attractions icons rounded" src="attractions.png" width="100"
+                height="125">
+            <input type="image" id="all" class="all icons rounded" src="all.png" width="100" height="125">
 
-            <div class="md-form input-group mb-3">
+            <div class="md-form input-group pt-1 pb-2">
                 <input type="text" class="form-control" placeholder="Enter your zipcode" aria-label="zip-code"
                     aria-describedby="MaterialButton-addon2">
                 <div class="input-zip-code">
@@ -38,6 +49,8 @@
 
 
 
+
+        <!-- Closing div for container-->
     </div>
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
