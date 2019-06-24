@@ -19,7 +19,19 @@
     #map {
       height: 600px;
       width: 60%;
+      margin-left: 15px;
     }
+    .container {
+            background: white;
+            padding: 0;
+            margin:-600px auto;
+            width: 550px;
+            height: 600px;
+            position: relative;
+            box-shadow: 5px 5px 5px black;
+            border: solid 1px black;
+           margin-left: 950px;
+        }
   
   </style>
 </head>
@@ -35,7 +47,11 @@
   
   <div id="map"></div>
 
-  <div id="addInfo"></div>
+  
+
+  <div class="container  rounded pt-1 pt-2 ">
+      <h3>(list of places)</h3>
+  </div>
 
   <script>
     function initMap() {
@@ -101,9 +117,11 @@
       }
     }
   </script>
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA372PcuJQKYrKADjhHTLLDVcfsoCzF-4M&callback=initMap">
-    </script>
+  <!-- <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHGfJYry-spTdOv8e4JPoL_c1CO0hkoG0&callback=initMap">
+                                                //=AIzaSyDHGfJYry-spTdOv8e4JPoL_c1CO0hkoG0&callback=initMap//
+    </script>                                      -->
 </body>
 
 </html>
+
